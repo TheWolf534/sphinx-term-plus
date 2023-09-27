@@ -11,7 +11,7 @@ import sys
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
-import sphinx_term
+import sphinx_term_plus as sphinx_term
 
 DEPENDENCIES = {  # See sphinx_term/_static/README.md for more info
     # jQuery (MIT): https://github.com/jquery/jquery
