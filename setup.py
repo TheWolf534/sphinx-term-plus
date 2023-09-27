@@ -7,11 +7,11 @@ from setuptools import find_packages, setup
 
 import sphinx_term
 
-DISTNAME = 'sphinx-term'
-MAINTAINER = 'Kacper Sokol'
-MAINTAINER_EMAIL = 'ks1591@my.bristol.ac.uk'
-DESCRIPTION = ('A collection of Sphinx (and Jupyter Book) extensions '
-               'for authoring vivacious terminal transcripts.')
+DISTNAME = 'sphinx-term-plus'
+MAINTAINER = 'Tiago Ercole'
+MAINTAINER_EMAIL = 's225197@dtu.dk'
+DESCRIPTION = ('A forked collection of Sphinx (and Jupyter Book) extensions '
+               'for authoring vivacious terminal transcripts with some extra features added by me.')
 with open('README.md') as f:
     LONG_DESCRIPTION = f.read()
 LONG_DESCRIPTION_CT = 'text/markdown'
