@@ -36,7 +36,8 @@ TERMYNAL_ATTRS = [
     'progressChar',
     'cursor',
     'noInit',
-    'lineData'
+    'lineData',
+    'terminal'
 ]
 TERMYNAL_LINE_ATTRS = [
     'prompt',
@@ -294,6 +295,16 @@ class Termynal(Directive):
             attributes[data_ty.format(attr)] = val
         # lineData
         attr = 'lineData'
+        attr_text = options.get(attr, None)
+        if attr_text is not None:
+            # validate
+            if not isinstance(attr_text, str):
+                raise ValueError(data_ty_error.format(
+                    attr, 'string (Object[])'))
+            # memorise
+            attributes[data_ty.format(attr)] = attr_text
+        # terminal
+        attr = 'terminal'
         attr_text = options.get(attr, None)
         if attr_text is not None:
             # validate
