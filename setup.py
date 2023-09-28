@@ -5,7 +5,7 @@
 
 from setuptools import find_packages, setup
 
-import sphinx_term
+import sphinx_term_plus
 
 DISTNAME = 'sphinx-term-plus'
 MAINTAINER = 'Tiago Ercole'
