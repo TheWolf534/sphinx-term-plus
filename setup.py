@@ -16,7 +16,7 @@ with open('README.md') as f:
     LONG_DESCRIPTION = f.read()
 LONG_DESCRIPTION_CT = 'text/markdown'
 LICENCE = 'new BSD'
-VERSION = sphinx_term.__version__
+VERSION = sphinx_term_plus.__version__
 URL = 'https://github.com/TheWolf534/{}'.format(DISTNAME)
 DOWNLOAD_URL = 'https://pypi.org/project/{}/#files'.format(DISTNAME)
 PYTHON_REQUIRES = '~=3.5'  # Python 3.5 and up but not yet Python 4
