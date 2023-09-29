@@ -43,8 +43,8 @@ extension to the Sphinx `extensions` list in your `conf.py`
 ```Python
 ...
 extensions = [
-    'sphinx_term.cssterm',
-    'sphinx_term.termynal'
+    'sphinx_term_plus.cssterm',
+    'sphinx_term_plus.termynal'
 ]
 ...
 ```
