@@ -37,7 +37,9 @@ TERMYNAL_ATTRS = [
     'cursor',
     'noInit',
     'lineData',
-    'terminal'
+    'title',
+    'windows',
+    'unix'
 ]
 TERMYNAL_LINE_ATTRS = [
     'prompt',
@@ -303,16 +305,36 @@ class Termynal(Directive):
                     attr, 'string (Object[])'))
             # memorise
             attributes[data_ty.format(attr)] = attr_text
-        # terminal
-        attr = 'terminal'
+        # title
+        attr = 'title'
         attr_text = options.get(attr, None)
         if attr_text is not None:
             # validate
             if not isinstance(attr_text, str):
-                raise ValueError(data_ty_error.format(
-                    attr, 'string (Object[])'))
+                raise ValueError(data_ty_error.format(attr, 'string (Object[])'))
             # memorise
             attributes[data_ty.format(attr)] = attr_text
+
+        # windows
+        attr = 'windows'
+        attr_text = options.get(attr, None)
+        if attr_text is not None:
+            # validate
+            if not isinstance(attr_text, bool):
+                raise ValueError(data_ty_error.format(attr, 'boolean'))
+            # memorise
+            attributes[data_ty.format(attr)] = 'true' if attr_text else 'false'
+
+        # unix
+        attr = 'unix'
+        attr_text = options.get(attr, None)
+        if attr_text is not None:
+            # validate
+            if not isinstance(attr_text, bool):
+                raise ValueError(data_ty_error.format(attr, 'boolean'))
+            # memorise
+            attributes[data_ty.format(attr)] = 'true' if attr_text else 'false'
+        
 
         # if the content is given explicitly, use it instead of loading a file
         if self.content:
