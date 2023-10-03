@@ -323,7 +323,7 @@ class Termynal(Directive):
             if not isinstance(attr_text, bool):
                 raise ValueError(data_ty_error.format(attr, 'boolean'))
             # memorise
-            attributes[data_ty.format(attr)] = 'true' if attr_text else 'false'
+            attributes[data_ty.format(attr)] = attr_text
 
         # unix
         attr = 'unix'
@@ -333,7 +333,7 @@ class Termynal(Directive):
             if not isinstance(attr_text, bool):
                 raise ValueError(data_ty_error.format(attr, 'boolean'))
             # memorise
-            attributes[data_ty.format(attr)] = 'true' if attr_text else 'false'
+            attributes[data_ty.format(attr)] = attr_text
         
 
         # if the content is given explicitly, use it instead of loading a file
