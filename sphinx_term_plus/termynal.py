@@ -318,22 +318,12 @@ class Termynal(Directive):
         # windows
         attr = 'windows'
         attr_text = options.get(attr, None)
-        if attr_text is not None:
-            # validate
-            if not isinstance(attr_text, bool):
-                raise ValueError(data_ty_error.format(attr, 'boolean'))
-            # memorise
-            attributes[data_ty.format(attr)] = attr_text
+        attributes[data_ty.format(attr)] = attr_text
 
         # unix
         attr = 'unix'
         attr_text = options.get(attr, None)
-        if attr_text is not None:
-            # validate
-            if not isinstance(attr_text, bool):
-                raise ValueError(data_ty_error.format(attr, 'boolean'))
-            # memorise
-            attributes[data_ty.format(attr)] = attr_text
+        attributes[data_ty.format(attr)] = attr_text
         
 
         # if the content is given explicitly, use it instead of loading a file
