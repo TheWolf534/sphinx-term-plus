@@ -31,7 +31,6 @@ TERMYNAL_ATTRS = [
     'prefix',
     'startDelay',
     'typeDelay',
-    'lineDelay',
     'progressLength',
     'progressChar',
     'cursor',
@@ -39,7 +38,8 @@ TERMYNAL_ATTRS = [
     'lineData',
     'title',
     'windows',
-    'unix'
+    'unix',
+    'linedelay'
 ]
 TERMYNAL_LINE_ATTRS = [
     'prompt',
@@ -63,7 +63,6 @@ class termynal_box(nodes.literal_block, nodes.Element):
 def visit_termynal_box_node(self, node):
     """Builds an opening HTML tag for termynal boxes."""
     attributes = {'data-termynal': ''}
-
     for i in TERMYNAL_ATTRS:
         attr = 'data-ty-{}'.format(i.lower())
         attr_text = node.attributes.get(attr, None)
@@ -246,7 +245,7 @@ class Termynal(Directive):
             # memorise
             attributes[data_ty.format(attr)] = attr_text
         # lineDelay
-        attr = 'lineDelay'
+        attr = 'linedelay'
         attr_text = options.get(attr, None)
         if attr_text is not None:
             # validate
@@ -324,7 +323,6 @@ class Termynal(Directive):
         attr = 'unix'
         attr_text = options.get(attr, None)
         attributes[data_ty.format(attr)] = attr_text
-        
 
         # if the content is given explicitly, use it instead of loading a file
         if self.content:
