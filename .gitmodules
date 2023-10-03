@@ -2,3 +2,6 @@
 	path = sphinx_term_plus/_static/cssterm
 	url = https://github.com/nstephens/cssterm.git
 	
+[submodule "sphinx_term_plus/_static/termynal"]
+	path = sphinx_term_plus/_static/termynal
+	url = https://github.com/TheWolf534/termynal.git
